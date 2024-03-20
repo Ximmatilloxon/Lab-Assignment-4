@@ -59,21 +59,21 @@ int main(){
     val++;
     Node *temp = root;
     while(1){
-        if(temp->value == val){
-            cout << val;
-            break;
+        if(temp->value < val){
+            if(temp->right) temp = temp->right;
+            else{
+                cout << temp->rightL->msg;
+                break;
+            }
         }
-        else if(temp->rightL || temp->leftL) {
-            if (temp->value == val)cout << val;
-            else {
-                if (val > temp->value) cout << temp->rightL->msg;
-                else cout << temp->leftL->msg;
+        else{
+            if(temp->left) temp = temp->left;
+            else{
+                cout << temp->leftL->msg;
+                break;
             }
-            break;
-        }else{
-            if(val < temp->value) temp = temp->left;
-            else if(val > temp->value) temp = temp->right;
-            }
+        }
+
     }
 
 }
