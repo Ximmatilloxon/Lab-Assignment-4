@@ -56,7 +56,7 @@ int main(){
 
     int val;
     cin >> val;
-
+    val++;
     Node *temp = root;
     while(1){
         if(temp->value == val){
